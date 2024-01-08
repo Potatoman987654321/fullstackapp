@@ -4,6 +4,8 @@ const User = require("../models/users");
 const multer = require("multer");
 const upload = multer();
 
+// tried to user multer but didnt have time to make it work.
+
 router.get("/", async (req, res) => {
   try {
     let username = "Guest";
