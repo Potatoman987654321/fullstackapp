@@ -1,0 +1,52 @@
+<%- include('layout/header') %>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <div class="container">
+        <div class="row mt-4">
+            <div class="col-lg-12">
+                <input type="text" id="codeInput" class="form-control form-control-lg"
+                    placeholder="Enter your room CODE">
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-lg-8">
+                <div class="card shadow">
+                    <div class="card-header bg-primary">
+                        <h5 class="text-light">Video Call</h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <div id="localVideoContainer" class="rounded">
+                            <video id="localVideo" autoplay playsinline muted class="video"></video>
+                            <video id="remoteVideo" autoplay playsinline class="video"></video>
+                        </div>
+                        <div class="margin-top mt-3">
+                            Open this page in a second browser window then click below to start the WebRTC connection.
+                        </div>
+                        <div class="margin-top mt-3">
+                            <input type="button" id="start" onclick="start(true)" value="Start WebRTC"
+                                class="btn btn-primary btn-lg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card shadow">
+                    <div class="card-header bg-primary">
+                        <h5 class="text-light">Chat</h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <div id="chat" class="mt-3">
+                            <input type="text" id="chatInput" class="form-control form-control-lg"
+                                placeholder="Enter your message">
+                            <button id="sendButton" class="btn btn-primary btn-lg mt-3">Send</button>
+                            <button id="sendFileButton" class="btn btn-primary btn-lg mt-3">Send File</button>
+                            <div id="chatArea" class="mt-3"
+                                style="width: 366px; height:400px; border: 1px solid #ccc; padding: 10px; overflow-y: scroll;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="webrtc.js"></script>
+    <%- include('layout/footer') %>
